@@ -6,7 +6,7 @@ window.fetch = (url, init, ...args) => {
           console.log('bruv');
 			var response;
 			var body;
-			origFetch(url, init, ...args).then(function(res){response = res; return res.json()})
+			return origFetch(url, init, ...args).then(function(res){response = res; return res.json()})
 						     .then(function(bod) {
  bod.token = bod.token.replace("\"hide_ads\":false", "\"hide_ads\":true").replace("\"server_ads\":true", "\"server_ads\":false").replace("\"show_ads\":true", "\"show_ads\":false");
 return 
@@ -15,7 +15,7 @@ return
 	    statusText: response.statusText,
 	    headers: response.headers
 	  }) ;
-	resolve();
+
   
 				
 				
